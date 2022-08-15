@@ -87,22 +87,22 @@ function findNumDiv5() {
   let rangeStart;
   let rangeEnd;
 
-  while (isNaN(rangeStart) || rangeStart < 0) {
-    rangeStart = Number(prompt('Please, enter the beginning of the range (zero or positive number)'));
+  while (isNaN(rangeStart)) {
+    rangeStart = Number(prompt('Please, enter the beginning of the range'));
   }
 
-  while (isNaN(rangeEnd) || rangeEnd < 0 || rangeEnd <= rangeStart) {
-    rangeEnd = Number(prompt('Please, enter the end of the range (positive number, bigger than start of the range)'));
+  while (isNaN(rangeEnd) || rangeEnd <= rangeStart) {
+    rangeEnd = Number(prompt('Please, enter the end of the range (bigger than start of the range)'));
   }
 
   alert('Thank you! Check the console');
   console.log('Checking for numbers that are divisible by 5...');
 
-  for (rangeStart; rangeStart <= rangeEnd; rangeStart++) {
-    if (!(rangeStart % 5 === 0) || rangeStart === 0) {
+  for (let i = rangeStart; i <= rangeEnd; i++) {
+    if (!(i % 5 === 0) || i === 0) {
       continue;
     } else {
-      console.log(rangeStart);
+      console.log(i);
     }
   }
 }
